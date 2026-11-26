@@ -1,0 +1,13 @@
+pairs with spans on both sides: 200   (skipped: 0 without spans)
+
+E6  pairs whose provider-side seed disagrees or is not unique: 0  (must be 0)
+FP  pairs differing in system_fingerprint at some span index: 197/200  = 0.9850
+
+First divergence, classified:
+  model_sample                  200/200  = 1.0000
+
+  by side:
+    model_sample:user_sim                     114
+    model_sample:agent                         86
+
+pairs agreeing on outcome whose spans still differ: 156

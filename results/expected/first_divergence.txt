@@ -1,0 +1,44 @@
+pairs: 200 | pairs with a first divergence: 200 | identical pairs: 0
+model calls per pair (the shorter episode): min 6, median 15
+
+First-divergence call index, pairs at each index:
+  spans compared byte for byte (first pass)   {0: 94, 1: 64, 2: 20, 3: 22}
+  provider tool-call ids normalised (second)  {0: 94, 1: 63, 2: 21, 3: 3, 4: 13, 5: 4, 6: 1, 7: 1}
+  what differed first, second pass            {'response': 200}
+  side of the first divergence, first pass    {'user_sim': 114, 'agent': 86}
+  side of the first divergence, second pass   {'user_sim': 116, 'agent': 84}
+
+Who makes each call (P5), over both episodes of every pair:
+  call 0: {'user_sim': 400}
+  call 1: {'agent': 400}
+
+Hazard (P4): of pairs still identical entering call i, the share diverging at i
+  first pass:
+    call 0: 94/200 = 0.4700   Clopper-Pearson 95% [0.3992, 0.5417]
+    call 1: 64/106 = 0.6038   Clopper-Pearson 95% [0.5041, 0.6975]
+    call 2: 20/42 = 0.4762   Clopper-Pearson 95% [0.3200, 0.6358]
+    call 3: 22/22 = 1.0000   Clopper-Pearson 95% [0.8456, 1.0000]
+  second pass:
+    call 0: 94/200 = 0.4700   Clopper-Pearson 95% [0.3992, 0.5417]
+    call 1: 63/106 = 0.5943   Clopper-Pearson 95% [0.4946, 0.6887]
+    call 2: 21/43 = 0.4884   Clopper-Pearson 95% [0.3331, 0.6454]
+    call 3: 3/22 = 0.1364   Clopper-Pearson 95% [0.0291, 0.3491]
+    call 4: 13/19 = 0.6842   Clopper-Pearson 95% [0.4345, 0.8742]
+    call 5: 4/6 = 0.6667   Clopper-Pearson 95% [0.2228, 0.9567]
+    call 6: 1/2 = 0.5000   Clopper-Pearson 95% [0.0126, 0.9874]
+    call 7: 1/1 = 1.0000   Clopper-Pearson 95% [0.0250, 1.0000]
+
+Clustering by task (P2), second pass: between-task variance share 0.3990
+  permutation null (10000 shuffles, seed 20260915): mean 0.2472, 95th percentile 0.3218, p = 0.0018
+  tasks whose four pairs all diverge at the same index: 16 of 50; task means run 0.00 to 3.50
+
+Position against outcome disagreement (P3), over 50 tasks:
+  Spearman rho +0.155, p = 0.281 | Kendall tau +0.129, p = 0.270
+
+Backend fingerprint differs between the pair's two episodes:
+  at call 0, where the request is identical by construction: 99/200 = 0.495   [0.424, 0.566]
+  at the first divergence, first pass: 113/200 = 0.565   [0.493, 0.635]   Fisher exact against call 0: p = 0.193, odds ratio 1.33 | same fingerprint: 87/200
+  at the first divergence, second pass: 109/200 = 0.545   [0.473, 0.615]   Fisher exact against call 0: p = 0.368, odds ratio 1.22 | same fingerprint: 91/200
+
+Exploratory, not declared in advance: outcome disagreement by task
+  between-task variance share 0.3298; permutation null 95th percentile 0.3153, p = 0.0459

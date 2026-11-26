@@ -1,0 +1,43 @@
+A  20260915T210140Z-4847  salt=d2ebb5be1d394d12  target=tau2-airline/gpt-4.1-mini-2025-04-14@v0  status=complete
+B  20260915T211148Z-965d  salt=d2ebb5be1d394d12  target=tau2-airline/gpt-4.1-mini-2025-04-14@v0  status=complete
+E5 same salt: True | same target: True
+
+rows A=200 B=200
+  A: 0 duplicate cells (E4 requires 0)
+  B: 0 duplicate cells (E4 requires 0)
+joined pairs: 200
+E3 seeds equal within pair: 200/200
+E1 both outcomes present: 200/200
+E2 instrument-side either side: 0
+
+eligible (E1-E5, E2 applied): n=200
+  D1 outcome disagreement 44/200 = 0.2200
+     Clopper-Pearson 95%   [0.1646, 0.2839]  width 0.1192
+     task-clustered boot   [0.1550, 0.2850]  width 0.1300
+
+E2 NOT applied: n=200
+  D1 outcome disagreement 44/200 = 0.2200
+     Clopper-Pearson 95%   [0.1646, 0.2839]  width 0.1192
+     task-clustered boot   [0.1550, 0.2850]  width 0.1300
+
+Secondaries (eligible set):
+  D2 reward        disagree 44/200 = 0.2200
+  D3 breakdown     disagree 49/200 = 0.2450
+  D4 step count    disagree 161/200 = 0.8050
+    n_messages           175/200 = 0.8750
+    n_agent_messages     161/200 = 0.8050
+    n_user_messages      146/200 = 0.7300
+    n_tool_messages      136/200 = 0.6800
+    n_tool_calls         136/200 = 0.6800
+  D5 any shape field  disagree 180/200 = 0.9000
+  D6 system prompt identical 200/200 (must be 200: both arms are the stock agent)
+
+  A1 outcome-agreeing pairs with a shape disagreement: 139
+
+D7 seed contrast (different seed, same task, same cfg): 280/1200 = 0.2333
+    task-clustered boot 95% [0.1733, 0.2950]   (NOT binomial: pairs share episodes)
+    same-seed rate (D1)     0.2200
+    difference (different - same) = +0.0133
+    a difference near zero means the seed parameter is buying nothing here
+
+  provider-reported cost over eligible pairs: $5.4494 (400 episodes, $0.01362/episode)

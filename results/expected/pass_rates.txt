@@ -1,0 +1,18 @@
+same salt: True (d2ebb5be1d394d12) | same target: True (tau2-airline/gpt-4.1-mini-2025-04-14@v0)
+
+Each arm on its own:
+  R  20260915T210140Z-4847  solved 90/200 = 45.0%   Clopper-Pearson 95% [0.3798, 0.5218]   task-clustered boot [0.3400, 0.5650]
+     outcomes {'solved': 90, 'unsolved': 110} | termination reasons {'user_stop': 200} | rows with an error 0
+  R′ 20260915T211148Z-965d  solved 88/200 = 44.0%   Clopper-Pearson 95% [0.3701, 0.5117]   task-clustered boot [0.3350, 0.5500]
+     outcomes {'solved': 88, 'unsolved': 112} | termination reasons {'user_stop': 200} | rows with an error 0
+
+Pairs joined on (config_hash, replicate_index): 200 | seeds equal within the pair: 200/200
+
+                 R′ solved   R′ unsolved
+R solved                67            23      90
+R unsolved              21            89     110
+                        88           112     200
+
+Pairs whose two outcomes disagree: 44 of 200 = 22.0%
+Exact McNemar on the 44 disagreeing pairs (23 against 21): p = 0.880
+Net swing (23 - 21)/200 = +1.0 points   task-clustered boot 95% [-5.5, +7.5]

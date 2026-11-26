@@ -1,0 +1,27 @@
+# A paired-replay declaration for the two arms, written to show what
+# `poisson-prove paired` does with them. See "What poisson-prove 0.4.0 does with these
+# two runs" in the README. The command excludes every pair at its request check.
+#
+#   poisson-prove --store runs paired --declaration scripts/pair-check.toml
+
+value_key = "reward"                      # tau2's reward, 1.0 for a solved task
+cluster_key = "task_id"                   # the item: one of the 50 airline tasks
+stratum_key = "domain"                    # these runs carry one sweep axis and no threshold group
+request_span = "gpt-4.1-mini-2025-04-14"  # the only span name in these runs
+model_key = "model"
+model_pin = "gpt-4.1-mini-2025-04-14"
+exemptions = []
+headers = "not_recorded"
+retries = "not_recorded"
+bootstrap_b = 10000
+bootstrap_seed = 20260915
+
+[[cuts]]
+name = "solved"
+threshold = 1.0
+comparison = "ge"
+
+[[sweeps]]
+name = "same-run-twice"
+a = "20260915T210140Z-4847"
+b = "20260915T211148Z-965d"
