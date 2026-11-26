@@ -1,0 +1,104 @@
+same-run-twice
+Copyright (c) 2026 Taylor Kolasinski / Poisson Labs
+
+The scripts, the documents and the stored runs in this repository are distributed under
+the MIT license; see LICENSE. The stored runs carry text from one third-party benchmark
+and replies from one third-party model, listed below. No third-party code is included.
+
+--------------------------------------------------------------------------------
+τ²-bench (tau2-bench), Sierra Research
+https://github.com/sierra-research/tau2-bench
+Pinned at commit 2174a603f6d014ef94473ffa95957f6ce27100db (package version 1.0.1)
+License: MIT
+License file: https://github.com/sierra-research/tau2-bench/blob/2174a603f6d014ef94473ffa95957f6ce27100db/LICENSE
+
+What is here from it. Both arms ran τ²-bench's airline domain, tasks 0 to 49, with its
+stock agent and its user simulator. Each stored episode records the model calls it
+made, so the files under runs/*/episodes/ contain text that τ²-bench wrote: the airline
+policy, the user simulator's guidelines, the task instructions given to the simulated
+customer, the tool definitions, and tool results read from its airline database. The
+customers, their names, their user ids and their @example.com addresses are τ²-bench's
+synthetic data. No τ²-bench source code is included.
+
+τ²-bench publishes one license file, which covers its code and the data in its
+repository. No separate terms for the airline data were found at the pinned commit. The
+license, as that file gives it:
+
+MIT License
+
+Copyright (c) 2025 Sierra Research
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Citations, as τ²-bench's README gives them
+(https://github.com/sierra-research/tau2-bench/blob/2174a603f6d014ef94473ffa95957f6ce27100db/README.md):
+
+@misc{barres2025tau2,
+      title={$\tau^2$-Bench: Evaluating Conversational Agents in a Dual-Control Environment},
+      author={Victor Barres and Honghua Dong and Soham Ray and Xujie Si and Karthik Narasimhan},
+      year={2025},
+      eprint={2506.07982},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2506.07982},
+}
+
+@misc{yao2024tau,
+      title={$\tau$-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains},
+      author={Shunyu Yao and Noah Shinn and Pedram Razavi and Karthik Narasimhan},
+      year={2024},
+      eprint={2406.12045},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2406.12045},
+}
+
+--------------------------------------------------------------------------------
+Model replies: OpenAI gpt-4.1-mini-2025-04-14
+https://openai.com/policies/services-agreement/
+
+What is here from it. The agent and the user simulator both called this model through
+OpenAI's API. The stored episodes contain every request sent and every reply received,
+with the identifiers the API returned for each reply (a response id and a backend
+fingerprint). No model weights are included.
+
+The OpenAI Services Agreement, as published at the address above (marked "Updated:
+December 1, 2025" when read on 2026-11-25), says of content sent to and received from
+the API:
+
+  "As between Customer and OpenAI, to the extent permitted by applicable law, Customer:
+  (a) retains all ownership rights in Input; and (b) owns all Output. OpenAI hereby
+  assigns to Customer all OpenAI’s right, title, and interest, if any, in and to Output."
+
+That is the public text of the agreement. The terms on the account that made these calls
+were not separately reviewed for this notice.
+
+--------------------------------------------------------------------------------
+Libraries the scripts import
+
+Installed from PyPI by requirements.txt. None of their code is in this repository.
+
+poisson-prove 0.4.0    MIT           https://github.com/poisson-labs/prove/blob/v0.4.0/LICENSE
+numpy 2.4.6            BSD-3-Clause  https://github.com/numpy/numpy/blob/v2.4.6/LICENSE.txt
+pandas 3.1.1           BSD-3-Clause  https://github.com/pandas-dev/pandas/blob/v3.1.1/LICENSE
+pyarrow 26.0.1         Apache-2.0    https://github.com/apache/arrow/blob/apache-arrow-26.0.1/LICENSE.txt
+scipy 1.17.1           BSD-3-Clause  https://github.com/scipy/scipy/blob/v1.17.1/LICENSE.txt
+
+Each of these distributions also bundles third-party components under further terms,
+which its own license file lists.

@@ -1,0 +1,56 @@
+# Every package the scripts import, and what those packages need, at exact versions.
+# Compiled for Python 3.11 from the pins in pyproject.toml:
+#   uv pip compile --universal --python-version 3.11 --no-header pyproject.toml
+linkify-it-py==2.2.0
+    # via markdown-it-py
+markdown-it-py==4.3.0
+    # via
+    #   mdit-py-plugins
+    #   rich
+    #   textual
+mdit-py-plugins==0.7.0
+    # via textual
+mdurl==0.1.2
+    # via markdown-it-py
+numpy==2.4.6
+    # via
+    #   same-run-twice (pyproject.toml)
+    #   pandas
+    #   poisson-prove
+    #   scipy
+pandas==3.1.1
+    # via
+    #   same-run-twice (pyproject.toml)
+    #   poisson-prove
+platformdirs==4.14.8
+    # via textual
+poisson-prove==0.4.0
+    # via same-run-twice (pyproject.toml)
+pyarrow==26.0.1
+    # via
+    #   same-run-twice (pyproject.toml)
+    #   poisson-prove
+pygments==2.21.0
+    # via
+    #   rich
+    #   textual
+python-dateutil==4.0.0
+    # via pandas
+rich==15.0.0
+    # via
+    #   poisson-prove
+    #   textual
+scipy==1.17.1
+    # via
+    #   same-run-twice (pyproject.toml)
+    #   poisson-prove
+textual==8.2.8
+    # via poisson-prove
+threadpoolctl==3.8.0
+    # via poisson-prove
+typing-extensions==4.16.0
+    # via textual
+tzdata==2026.6
+    # via
+    #   pandas
+    #   python-dateutil

@@ -1,0 +1,43 @@
+[project]
+name = "same-run-twice"
+version = "1.0.0"
+description = "The two stored runs, the analysis and the pre-registration behind the post \"45.0% and 44.0%\": tau2-bench airline run twice at the same configuration and seeds"
+readme = "README.md"
+license = "MIT"
+requires-python = "==3.11.*"
+authors = [{ name = "Poisson Labs", email = "work@poissonlabs.ai" }]
+maintainers = [{ name = "Poisson Labs", email = "work@poissonlabs.ai" }]
+dependencies = [
+    "poisson-prove==0.4.0",
+    "numpy==2.4.6",
+    "pandas==3.1.1",
+    "pyarrow==26.0.1",
+    "scipy==1.17.1",
+]
+
+[project.urls]
+Homepage = "https://poissonlabs.ai/research/the-same-run-twice/"
+Repository = "https://github.com/poisson-labs/same-run-twice"
+Issues = "https://github.com/poisson-labs/same-run-twice/issues"
+
+[dependency-groups]
+dev = ["pytest==9.2.0", "ruff==0.17.6"]
+
+# The scripts are run in place. Nothing here is built or installed as a package.
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider"
+
+[tool.ruff]
+line-length = 110
+src = ["scripts"]
+target-version = "py311"
+
+[tool.ruff.lint.per-file-ignores]
+# The three scripts filed on 2026-09-15 are kept as they were filed, lint findings included.
+"scripts/repro_r1_agreement.py" = ["ALL"]
+"scripts/repro_r1_spans.py" = ["ALL"]
+"scripts/repro_r1_spans2.py" = ["ALL"]

@@ -1,0 +1,20 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.coverage
+
+# editors and the OS
+.DS_Store
+.vscode/
+.idea/
+
+# working notes stay out of the repository
+devlog.md
+
+# what poisson-prove writes when asked to save or write its own files
+runs/.poisson/
+prove-paired-*/
+prove-runs/
