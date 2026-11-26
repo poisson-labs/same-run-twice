@@ -116,8 +116,8 @@ python scripts/first_divergence.py
   `manifest.json` and one Parquet file per episode. `requirements.txt` pins it, with
   numpy 2.4.6, pandas 3.1.1, pyarrow 26.0.1, scipy 1.17.1 and what those need: 17
   packages at exact versions.
-- The rerun was checked on Python 3.11.15 on macOS (arm64). The runs were written under
-  Python 3.11.7.
+- The rerun was checked from a fresh clone on Python 3.11.7, the version the runs were
+  written under, and on Python 3.11.15, both on macOS (arm64).
 - The filed scripts imported `proofload.store`. Here they import `poisson_prove.store`,
   the same class in the released package. The environment variable keeps its filed name,
   `PROOFLOAD_STORE`. The filed scripts on the pre-release source and the scripts here on
